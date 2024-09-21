@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './WeatherApp.css'
+import './WeatherApp.css';
+
 const WeatherApp = () => {
     const [city, setCity] = useState('Addis Ababa'); // Initialize with Addis Ababa
     const [weatherData, setWeatherData] = useState({});
     const [error, setError] = useState('');
 
     useEffect(() => {
+        // Fetch weather data initially on component mount
         fetchWeatherData(city);
-    }, [city]);
+    }, []); // Empty dependency array means this runs only on mount
 
     const fetchWeatherData = async (city) => {
         const apiKey = 'bb5b9f733054469155446726c61c429d'; // Your API key
@@ -57,7 +59,7 @@ const WeatherApp = () => {
                     </div>
                     <div className="additional-info">
                         <div className="info-item">
-                            <strong>Wind Speed:</strong> {weatherData.wind.speed}km/h
+                            <strong>Wind Speed:</strong> {weatherData.wind.speed} km/h
                         </div>
                         <div className="info-item">
                             <strong>Humidity:</strong> {weatherData.main.humidity}%
