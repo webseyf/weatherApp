@@ -1,19 +1,17 @@
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #4289b0, #56e058);
-  margin: 0;
-  padding: 20px;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure full viewport height */
+  background: linear-gradient(180deg, #4289b0, #56e058);
 }
 
 .app {
   display: flex;
   justify-content: center;
-  padding-top: 0;
-  margin: 2px;
   color: yellow;
   font-size: 2rem;
 }
@@ -21,12 +19,16 @@ body {
 .weather-container {
   border-radius: 12px;
   padding: 30px;
-  width: 100%; /* Full width on small screens */
-  max-width: 320px; /* Maximum width for larger screens */
+  width: 100%;
+  max-width: 340px; /* Limit width for larger screens */
   text-align: center;
   background-color: rgb(6, 6, 245);
   box-shadow: 0 6px 20px rgba(134, 11, 159, 0.9);
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .weather-container:hover {
@@ -47,9 +49,11 @@ body {
   outline: none;
   transition: border-color 0.4s;
 }
-strong{
+
+strong {
   color: #e6c50c;
 }
+
 .search-bar input:focus {
   border-color: #0056b3;
   box-shadow: 0 6px 20px rgba(159, 144, 11, 0.9);
@@ -71,7 +75,7 @@ strong{
 
 .weather-image {
   width: 100%;
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
   margin: 5px 0;
 }
@@ -109,37 +113,43 @@ strong{
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+  body {
+
+  }
+
   .weather-container {
     padding: 20px;
-    width: 100%; /* Ensure full width on small screens */
+    width: 100%;
   }
 
   .app {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Slightly smaller font for mobile */
   }
 
   .search-bar input {
-    width: 60%;
+    width: 60%; /* Adjust input width */
   }
 
   .description h1 {
-    font-size: 2em;
+    font-size: 2em; /* Responsive font size */
   }
 
   .description {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Responsive font size */
   }
-  
+
   .additional-info {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4px;
-
-
+    flex-direction: column; /* Stack info items */
+    align-items: center; /* Center align */
+    gap: 4px; /* Space between items */
   }
-  .info-item{
+
+  .info-item {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center align info items */
   }
 }
+
+
+
+
